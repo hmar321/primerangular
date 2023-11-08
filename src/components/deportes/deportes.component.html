@@ -1,0 +1,44 @@
+<div>
+    <h1>Ejemplo directivas Angular</h1>
+    <h2>Número deportes: {{sports.length}}</h2>
+    <!-- DIRECTIVA IF -->
+    <div *ngIf="sports.length < 7;then condiciontrue; else condicionelse ">
+
+    </div>
+    <h4 style="color: blueviolet;">
+        El primer deporte es {{sports[0]}}
+    </h4>
+    <!-- BUCLE CON DIRECTIVA FOR -->
+    <ul>
+        <li *ngFor="let depor of sports; let i = index">
+            Index: {{i}}, Deporte: {{depor}}
+        </li>
+    </ul>
+    <ng-template #condicionelse>
+        <P style="color: blue;">
+            Tenemos 7 o más deportes
+        </P>
+    </ng-template>
+    <ng-template #condiciontrue>
+        <P style="color: red;">
+            Tienes menos de 7 deportes
+        </P>
+    </ng-template>
+    <h1>Style if</h1>
+    <ul>
+        <li *ngFor="let numero of numeros" [style.color]="numero % 2 === 0 ? 'green':'red'">
+            {{numero}}
+        </li>
+    </ul>
+    <h1>Class if</h1>
+    <ul>
+        <li *ngFor="let numero of numeros" [class.par]="numero % 2 === 0 " [class.impar]="numero % 2 != 0 ">
+            {{numero}}
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let numero of numeros" [ngClass]="{par:numero % 2 === 0,impar:numero % 2 != 0}">
+            {{numero}}
+        </li>
+    </ul>
+</div>

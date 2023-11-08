@@ -1,0 +1,21 @@
+<div>
+    <form #formTablaMultiplicar="ngForm" (ngSubmit)="crearTabla()">
+        <label>Número</label>
+        <input type="number" #cajanumero name="cajanumero"> 
+        <button>Crear tabla</button>
+    </form>
+    <table *ngIf="num" border="1">
+        <thead>
+            <tr>
+                <th>Operación</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let numero of operaciones">
+                <td>{{num}}x{{numero}}</td>
+                <td>{{num*numero}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
