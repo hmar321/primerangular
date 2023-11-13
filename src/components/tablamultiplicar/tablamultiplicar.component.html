@@ -1,7 +1,7 @@
 <div>
     <form #formTablaMultiplicar="ngForm" (ngSubmit)="crearTabla()">
         <label>Número</label>
-        <input type="number" #cajanumero name="cajanumero"> 
+        <input (change)="crearTabla()" type="number" #cajanumero name="cajanumero"> 
         <button>Crear tabla</button>
     </form>
     <table *ngIf="num" border="1">
